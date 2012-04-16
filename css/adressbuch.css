@@ -1,0 +1,32 @@
+#adressbuch_content {
+	height: 300px;
+	overflow-y: auto;
+	margin-top: 10px;
+}
+/*In dieser Datei wird festgelegt, wie das Design des Adressbuchs (für die registrierten User) 
+ * aussehen soll (bspw. Abstände zum Rahmen, Anzeige in Blockform,...) */
+
+/* Zeile im Adressbuch */
+.addressbuch_line{
+	margin-bottom: 5px;
+}
+
+/* Eintrag im Adressbuch */
+
+.adressbuch_eintrag_form {
+	margin-top: 10px;
+	display: block;
+}
+
+/* Link zur Löschbestätigung */
+
+a.delete_confirm { 
+	color: #ffaaaa;
+}
+
+/* Link zur Adressverwendung */
+
+a.use_adress {
+	color: green;
+}
+

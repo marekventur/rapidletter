@@ -1,0 +1,2 @@
+RewriteEngine on 
+RewriteRule ^(.*)$ http://www.rapidletter.de/403 [R=301,L]

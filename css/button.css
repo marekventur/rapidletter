@@ -1,0 +1,27 @@
+/* Ein orangener Button mit (fast nur) CSS3 */
+
+input.login_submit, input.register_submit, .orange_button {
+	border: none; 
+	background: #222 url(/img/button_overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 3px 8px 3px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	background-color: #ff5c00;
+	font-weight: bold;
+	font-size: 0.9em;
+	font-family: Arial;
+}
+
+/* Hover-Status */
+input.login_submit:hover, input.register_submit:hover, .orange_button:hover { 
+	background-color: #d45500; 
+}

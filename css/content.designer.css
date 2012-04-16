@@ -1,0 +1,212 @@
+/* Linke und rechte Spalte im Designer definieren */
+.designer_left {
+	width: 320px;
+	float:left;
+	margin-right: 60px;
+}
+.designer_right {
+	width: 500px;
+	float:left;
+	padding-top: 5px;
+}
+.designer_clear {
+	clear: left;	
+}
+
+/* Die Brief-Voransicht */
+.letter_preview_297 {
+	width: 297px;
+	height: 420px;
+	padding: 10px;
+	background: url(../img/letter_shadow.gif);
+}
+
+.letter_preview_button {
+	margin-left: 10px;
+}
+
+/* Die Weiter/Zurück-Buttons */
+.button_next {
+	font-size: 1.3em;
+	margin-top: 40px;
+	float: right;
+	cursor:pointer;
+}
+.button_prev {
+	font-size: 1.3em;
+	margin-top: 40px;
+	float: left;
+	cursor:pointer;
+}
+
+/* Eine Zeile der Formulare mit Label, Input und Tooltip*/
+.designer_form_row {
+	position: relative;
+	sline-height: 30px;
+	height: 30px;
+	text-decoration: none;
+}
+
+.designer_form_row label, .designer_form_row .label {
+	display: block;
+	width: 150px;
+	float: left;
+	padding-right: 10px;
+}
+
+.designer_form_row input, .designer_form_row select  {
+	width: 150px;	
+	text-align: left;
+}
+
+.designer_like_input {
+	width: 150px;
+	margin-left:0px;
+	padding-left: 0px;
+	float: left;
+}
+
+.designer_form_row_tall {
+	height: 100px;
+}
+
+.designer_form_row_tall textarea {
+	width: 150px;	
+	height: 90px;
+	text-align: left;	
+}
+
+.designer_form_tooltip {
+	position: absolute;
+	top: 0px;
+	left: 320px;
+	width: 205px;
+	background: #d1e4fb;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 5px;
+	visibility: hidden;
+	line-height: 1.3em;
+	z-index:100;
+}
+
+.designer_form_row:hover .designer_form_tooltip,.designer_form_row.hover .designer_form_tooltip {
+	visibility: visible;
+}
+
+/* Textareas mit voller Breite */
+textarea.full_width {
+	width: 305px;
+}
+
+/* Design 1 */
+/* Die kleinen Thumbnails für die Designs */
+.letter_preview_150 {
+	position: relative;
+	display: block;
+	width: 150px;
+	height: 208px;
+	margin-right: 20px;
+	float:left; 
+	text-decoration: none;
+}
+
+.letter_preview_150 img {
+	width: 140px;
+	height: 198px;
+	padding: 5px;
+	background: url(../img/letter_shadow_small.png);
+	
+}
+
+.design_choose_inner {
+	width: 550px;
+	height: auto;
+	
+}
+.design_choose {
+	height: auto;
+	width: auto;
+	overflow:visible;
+}
+
+.design_choose:hover {
+	overflow-x:visible;
+	overflow-y:visible;
+	overflow:visible;
+}
+
+.letter_preview_150_active img {
+	background-position: -150px 0px;
+}
+
+.letter_preview_150 .letter_preview_hover {
+	position: absolute; 
+	top: 155px; 
+	height: 48px; 
+	left: 5px;
+	background: url(../img/opacity_black_60.png);
+	color: #ffffff;
+	width: 140px;
+	visibility: hidden;
+}
+
+.letter_preview_150 .letter_preview_hover .inner {
+	padding: 3px;
+}
+
+.design_choose a.use_hover:hover .letter_preview_hover, 
+.letter_preview_150_active .letter_preview_hover { visibility: visible; }
+.letter_preview_clear {
+	clear: left;
+	height: 20px;
+}
+
+
+
+input.refresh_button {
+	padding-left: 38px;
+	background-image: url(/img/icon_refresh.png); 
+	background-repeat: no-repeat;
+	background-position-x:10px;
+}
+
+input.refresh_button:hover {
+	background-position-y:-26px;
+}
+
+
+/* Designer 1 */
+#logo_preview {
+	border: 1px solid #333333;
+}
+
+/* Designer 3*/
+#designer3_swap {
+	font-size: 12px;
+	margin: 15px 0px;
+	display: block;
+}
+
+/* Designer 4 */
+#betreff, #text, #ortdatum {
+	display: block;
+	width: 500px;
+	margin-bottom: 10px;
+}
+
+#betreff {
+	margin-bottom: 20px;
+}
+#text {
+	height: 400px;
+	clear: left;
+}
+
+#text_label, #betreff_label, ortdatun_label {
+	margin-top: 20px;
+	clear: left;
+	display: block;
+}
+

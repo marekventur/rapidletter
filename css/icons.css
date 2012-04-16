@@ -1,0 +1,85 @@
+/* Icons und die Gestaltung des Texts daneben */
+
+.icon {
+	width: 48px;
+	height: 48px;
+	background-image: url(../img/icons.png);
+	float:left;
+}
+
+.icon_with_text .icon { 
+	margin-right: 20px;
+	margin-top:10px; 
+}
+.icon_with_text { margin-bottom: 40px; }
+.icon_with_text_2_lines .spacer_line { height: 10px;}	
+
+.icon_coffee {}
+.icon_clipboard{background-position:-48px 0px;}
+.icon_pdf{background-position:-96px 0px;}
+.icon_wallet{background-position:-144px 0px;} 
+.icon_letter {background-position:0px -48px;}
+.icon_adress{background-position:-48px -48px;}
+.icon_save{background-position:-96px -48px;}
+.icon_time{background-position:-144px -48px;} 
+.icon_card{background-position:-0px -96px;} 
+.icon_account{background-position:-48px -96px;} 
+.icon_design{background-position:-96px -96px;} 
+.icon_social{background-position:-144px -96px;} 
+.icon_1{background-position:-0px -144px;} 
+.icon_2{background-position:-48px -144px;} 
+.icon_3{background-position:-96px -144px;} 
+.icon_post{background-position:-144px -144px;} 
+
+a.icon_button {
+	display: block; 
+	float: left;
+	background-color: #abdaea;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 2px 5px;
+	padding-right: 10px;
+	font-size: 14px; 
+	margin-right: 10px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	line-height: 22px;
+	padding-left: 5px;
+	
+}
+
+input.icon_button {
+	display: block; 
+	float: left;
+	background-color: #abdaea;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 2px 5px;
+	padding-right: 10px;
+	font-size: 14px; 
+	margin-right: 10px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	line-height: 22px;
+	padding-left: 5px;
+	cursor: pointer;
+	
+}
+
+.icon_button_spacer {
+	background-image: url(../img/icon_button.png);
+	background-position-y:0px;
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-right: 10px;
+}
+a.icon_button:hover { background-color: #dcf2f9; }
+input.icon_button:hover { background-color: #dcf2f9; }
+a.icon_button:hover .icon_button_spacer { background-position-y:-24px; }
+
+.icon_button_template .icon_button_spacer { background-position-x: 0px; }
+.icon_button_textblock .icon_button_spacer { background-position-x: -24px; }
+

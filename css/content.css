@@ -1,0 +1,228 @@
+/* Die Haupt-Inhalt-Box */
+#content {
+	background: #ffffff;
+	
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	
+	padding: 20px 20px;
+	font-size: 13px; 
+}
+
+/* Standartklasse für grauen Text */
+.gray {	color: #7a7a7a; }
+
+/* Fieldset stylen */
+fieldset {
+	background: #ffffff;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 10px 10px;
+	font-size: 14px; 
+	margin: 10px 0px;
+}
+
+legend {
+	font-size: 1.1em;
+	padding: 0px 5px;
+}
+
+/* Design der Überschriften wird geregelt */
+h1, h2, h3 {
+	font-family: 'Molengo', arial, serif; 
+}
+
+h1 {
+	margin: 30px 0 30px 0;
+	margin-top: 15px;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+h2 {
+	margin: 0px 0 30px 0;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+
+h3 {
+	margin: 20px 0 10px 0;
+	font-size: 1em;
+}
+
+/* universeller Clear-Left */
+.clear_left {
+	clear: left;
+	height: 0px;
+}
+
+/* Absatz */
+p {
+	margin-bottom: 10px;
+}
+
+/* Für 2-spaltige Inhalte */
+.half_left {
+	width: 425px;
+	float: left;
+}
+
+.half_right {
+	width: 425px;
+	float:left;
+	margin-left: 50px;
+}
+
+.half_clear {
+	clear: left;
+	height: 0;
+}
+
+/* nummerierte Listen */
+.numbered_list {
+	list-style-type: decimal;
+	list-style-position: inside;
+	line-height: 1.7em;
+}
+
+/* horizontaler Abstand */
+.hspace10 {	height: 10px; }
+.hspace20 {	height: 20px; }
+
+/* Startseite */
+
+
+#button_start {
+	font-size: 1.3em;
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+#index_info_box {
+	clear: both;
+	border: 
+	margin-top: 20px;
+	
+	background: #bbedfe;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 10px 10px;
+}
+
+#index_info_box p{
+	margin: 10px 0px;
+}
+#index_info_box p strong{
+	color: #ea650d;
+	font-weight: normal;
+}
+#index_info_box_first {
+	margin-top: 20px;
+}
+#letter_small {
+	float: left;
+}
+.price_tag {
+	margin-top: 10px;
+	color: #ea650d;
+}
+.price_tag .price {
+	font-size: 2em;
+	float: left;
+	font-weight: bold;
+	line-height: 0.9em;
+	margin-right: 4px;
+}
+.price_tag .info {
+	margin-top: 4px;
+	font-size: 0.8em;
+	line-height: 1.1em;
+	
+}
+
+/* FAQ */
+.faq_list li {
+	margin-bottom: 20px; 
+}
+ 
+/* Profil - Saved */
+.letter_list li {
+	display: block;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #cccccc solid;
+	
+	padding: 2px;
+	margin: 5px 0px;
+}
+
+.letter_list_line {
+	padding-left: 10px;
+	width: 350px;
+	height: 1.5em;
+	overflow: hidden;
+}
+
+.account_error {
+	color: red;
+}
+
+.account_success {
+	color: green;
+}
+
+/* "Öffentlichen Link einrichten" */
+
+.publiclink_title {
+	width: 490px;
+}
+.publiclink_desc {
+	width: 490px;
+	height: 100px;
+}
+
+/* Brief-Preview */
+.link_preview {
+	border: #c9c9c9 1px solid;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin: 5px 0px;
+	padding: 2px;
+	text-align: justify;
+}
+
+.link_preview strong {
+	margin-bottom: 5px;	
+	display: block;
+}
+
+/* Musterbriefe */
+.rounded_grey_border {
+	border: #c9c9c9 1px solid;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin: 5px 0px;
+	padding: 2px;
+	text-align: justify;
+}
+
+/* Postbrief */
+
+.numbered_list_big {
+	line-height: 1.7em;
+}
+
+.numbered_list_big li {
+	clear: left;
+	margin-bottom: 20px;
+}
+
+.price_tag_headline {
+	float:right;
+}
+
+ 

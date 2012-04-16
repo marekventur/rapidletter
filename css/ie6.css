@@ -1,0 +1,9 @@
+/* Internet-Explorer 6 Sonderstylsheet */
+
+input.login_submit, input.register_submit, .orange_button {
+	background-image: none; 
+}
+
+.design_choose {
+	overflow-x:auto;
+}

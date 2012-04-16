@@ -1,0 +1,198 @@
+/* Die Gestaltung der wichtigsten HTML-Elemente für das Plain-Template */
+body, html {
+	font-family: 'Nobile', arial, serif;
+	line-height: 1.3em;
+	height: 100%;
+	color: #333333;
+	font-size: 14px;
+}
+
+a {
+	color: #333333;
+}
+
+textarea, input, select {
+	font-family: 'Molengo', arial, serif;
+	font-size: 14px;
+	border: #c9c9c9 1px solid;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+#header {
+	padding: 2px;
+	border-bottom: 1px solid #c9c9c9;
+	width: 750px;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2 {
+	font-weight: normal;
+	padding-bottom: 3px;
+}
+
+h3 {
+	margin: 10px 0;
+	font-size: 1.2em;
+}
+
+/* Für die Zweiteilung in linke und rechte Spalte */
+#left {
+	float:left;
+	width: 240px;
+	height: 450px;
+	border-right: 1px solid #c9c9c9;
+}
+
+#right {
+	margin-left: 250px;
+	height: 450px;
+	width: 490px;
+	overflow-y: auto;
+}
+
+#left ul {
+}
+
+/* convenience class zur Abstandsgestaltung */
+.hspace10 {	height: 10px; }
+.hspace20 {	height: 20px; }
+
+/* Numerierte Liste */
+.numbered_list {
+	list-style-type: decimal;
+	list-style-position: inside;
+	line-height: 1.7em;
+}
+
+#left ul li a{
+	padding-left: 10px;
+	display: block;
+	text-decoration: none;
+}
+#left ul li strong {
+	margin-top: 10px;
+	display: block;
+}
+#left ul li a:hover{
+	background: #eeeeee;
+}
+
+/* Vorlage & Textbausteine */
+.text_part {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #c9c9c9;
+	padding-left: 10px;
+}
+
+.info_box {
+	background-color: #abdaea;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.info_box input {
+	border-color: #2c84a2;
+}
+
+.clear_left {
+	clear: left;
+}
+
+.betreff {
+	font-weight:bold;
+}
+.info_box_margin_top, .top_margin {
+	margin-top: 30px;
+}
+
+.textblock {
+	margin-top: 20px;
+	border-bottom: 1px solid #c9c9c9;
+}
+.keywords {
+	color: #333333;
+	margin: 5px 0px;
+	font-size: 0.8em;
+}
+a.use_textblock {
+	float: right;
+}
+
+/* Login */
+.login_fieldset, .register_fieldset {
+	background: #ffffff;
+	
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	
+	padding: 10px 10px;
+	font-size: 14px; 
+	margin: 10px 0px;
+}
+.login_fieldset legend, .register_fieldset legend {
+	font-size: 1.1em;
+	padding: 0px 5px;
+}
+
+.login_input, .register_input {
+	width: 150px;
+}
+
+.login_fieldset label {
+	display: block;
+	float: left;
+	width: 100px;
+}
+ 
+.register_fieldset label {
+	display: block;
+	float: left;
+	width: 150px;
+}
+
+.register_error, .login_error {
+	color: red;
+}
+
+.login_error {
+	margin-bottom: 10px;
+}
+
+
+/* E-Mail verschicken */
+.verschicken {
+	background: #ffffff;
+	
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border: 1px #2c84a2 solid;
+	
+	padding: 10px 10px;
+	font-size: 14px; 
+	margin: 10px 0px;
+}
+.verschicken legend {
+	font-size: 1.1em;
+	padding: 0px 5px;
+}
+
+.verschicken_input {
+	width: 150px;
+}
+
+/* Adressbucheintrag */
+/* Der Link zum wechseln zwischen normal und full */
+#adressbucheintrag_swap {
+	font-size: 12px;
+	margin: 15px 0px;
+	display: block;
+}

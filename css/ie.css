@@ -1,0 +1,30 @@
+/* Internet-Explorer Sonderstylsheet */
+
+* html #button_start{
+	margin-top: 20px;
+}
+
+
+/* Designer 1 */
+
+
+.design_choose_inner {
+	width: 500px;
+	height: auto;
+	
+}
+.design_choose {
+	height: auto;
+	width: auto;
+	overflow:visible;
+}
+
+.design_choose:hover {
+	overflow-x:visible;
+	overflow-y:visible;
+	overflow:visible;
+}
+
+.letter_preview_150 .letter_preview_hover {
+	background: #2c84a2;	
+}

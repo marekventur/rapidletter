@@ -1,0 +1,127 @@
+body, html {
+	background: #ffffff;
+	
+	font-family: 'Times New Roman', times, serif;
+	line-height: 1.3em;
+	height: 100%;
+	color: #000000;
+
+}
+
+/* In dieser Datei wird festgelegt, wie die Druckansicht der Internetseite aussehen soll. */
+/* Anzeige von Links */
+
+a {
+	color: #000000;
+	font-family: 'Times New Roman', times, serif;
+}
+
+a[href]:after {
+	content:" <"attr(href)">";
+ 	color: #000000;
+ 	font-style:italic;
+ 	size:100%;
+} 
+
+/* Inhalt */
+
+textarea, input, select {
+	font-family: 'Times New Roman', times, serif; 
+	font-size: 14px;
+	border: #000000 1px solid;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+/* Überschriften */
+
+h1, h2, h3 {
+	font-family: 'Times New Roman', times, serif; 
+}
+
+/* Umbrüche */
+
+hr {
+	margin: 25px 0px;
+	border-top: 1px solid #000000;
+}
+
+/* Wrapper */
+
+#wrapper {
+	width: 950px; 
+	margin: 0px auto;
+	background: url(/img/logo.png) no-repeat ;
+}
+
+/* Header */
+
+#header {
+	display: none;
+}
+
+/* Logo */
+
+#logo {
+	display: none;
+}
+
+/*Text neben dem Logo */
+
+#logo_text {
+	display: none;
+}
+
+/* Login und Logout */
+
+#login, #logout {
+	display: none;
+}
+
+/* linke Navigationszeile */
+
+#navigation li{
+	display: none;
+}
+
+/* Navigationszeile */
+
+#navigation {
+	display: none;
+}
+
+/* Alle Links, die im Bereich Navigation liegen */
+
+#navigation a {
+	display: none;
+}
+
+/* Footer */
+
+#footer {
+	display: none;
+}
+
+/* Alle Links, die im Footer liegen */
+
+#footer a{
+	display. none;
+}
+
+/* Bild auf der Startseite */
+
+#letter_small {
+	display: none;
+}
+
+/* "Briefgeneration starten" auf der Startseite */
+
+#button_start {
+	display: none;
+}
+
+/* Bilder im Text */
+
+ img[alt]:after {
+ content:"\A ("attr(alt)")";
+} 
