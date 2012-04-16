@@ -1,0 +1,227 @@
+Datenbankschema:
+
+-- phpMyAdmin SQL Dump
+-- version 3.3.3
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 16, 2012 at 10:48 PM
+-- Server version: 5.0.75
+-- PHP Version: 5.2.6-3ubuntu4.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `rapidletter`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `archive_error_mails`
+--
+
+CREATE TABLE IF NOT EXISTS `archive_error_mails` (
+  `id` int(10) NOT NULL auto_increment,
+  `text` mediumtext collate utf8_unicode_ci,
+  `time` timestamp NULL default CURRENT_TIMESTAMP,
+  `successfull` tinyint(4) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=45 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `benutzer`
+--
+
+CREATE TABLE IF NOT EXISTS `benutzer` (
+  `id` int(11) NOT NULL auto_increment,
+  `password` varchar(32) collate utf8_unicode_ci NOT NULL,
+  `email` varchar(45) collate utf8_unicode_ci NOT NULL,
+  `anrede` varchar(45) collate utf8_unicode_ci default '',
+  `vorname` varchar(45) collate utf8_unicode_ci default '',
+  `nachname` varchar(45) collate utf8_unicode_ci default '',
+  `strasse` varchar(45) collate utf8_unicode_ci default '',
+  `hausnummer` varchar(45) collate utf8_unicode_ci default '',
+  `plz` varchar(5) collate utf8_unicode_ci default '',
+  `ort` varchar(45) collate utf8_unicode_ci default '',
+  `logo` varchar(45) collate utf8_unicode_ci default '',
+  `logo_width` int(11) NOT NULL default '0',
+  `logo_height` int(11) NOT NULL default '0',
+  `design` varchar(10) collate utf8_unicode_ci NOT NULL default 'classic',
+  `use_bzz` varchar(10) collate utf8_unicode_ci NOT NULL default 'bzz',
+  `name` varchar(45) collate utf8_unicode_ci NOT NULL default '',
+  `type` varchar(10) collate utf8_unicode_ci NOT NULL default 'private',
+  `fenster` tinyint(1) NOT NULL default '0',
+  `falz` tinyint(4) NOT NULL default '1',
+  `firmenname` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `telefon` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `fax` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `internet` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `ga1` text collate utf8_unicode_ci NOT NULL,
+  `ga2` text collate utf8_unicode_ci NOT NULL,
+  `ga3` text collate utf8_unicode_ci NOT NULL,
+  `isadmin` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=171 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `briefe`
+--
+
+CREATE TABLE IF NOT EXISTS `briefe` (
+  `id` int(11) NOT NULL auto_increment,
+  `benutzer` int(11) NOT NULL,
+  `betreff` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `text` text collate utf8_unicode_ci NOT NULL,
+  `letter_type` varchar(45) collate utf8_unicode_ci NOT NULL default 'business',
+  `design` varchar(15) collate utf8_unicode_ci NOT NULL default 'classic',
+  `showFensterLine` tinyint(50) NOT NULL default '0',
+  `showFalzLine` tinyint(4) NOT NULL default '1',
+  `header` varchar(15) collate utf8_unicode_ci NOT NULL default '',
+  `absender_firmenname` varchar(255) collate utf8_unicode_ci default '',
+  `absender_anrede` varchar(255) collate utf8_unicode_ci default '',
+  `absender_vorname` varchar(255) collate utf8_unicode_ci default '',
+  `absender_nachname` varchar(255) collate utf8_unicode_ci default '',
+  `absender_strasse` varchar(255) collate utf8_unicode_ci default '',
+  `absender_hausnummer` varchar(255) collate utf8_unicode_ci default '',
+  `absender_plz` varchar(255) collate utf8_unicode_ci default '',
+  `absender_ort` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_use` varchar(10) collate utf8_unicode_ci default '',
+  `bzz_ihrzeichen` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_unserzeichen` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_name` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_telefon` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_fax` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_email` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_internet` varchar(255) collate utf8_unicode_ci default '',
+  `bzz_datum` varchar(255) collate utf8_unicode_ci default '',
+  `ga1` text collate utf8_unicode_ci,
+  `ga2` text collate utf8_unicode_ci,
+  `ga3` text collate utf8_unicode_ci,
+  `empfaenger_firmenname` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_anrede` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_vorname` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_nachname` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_strasse` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_hausnummer` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_plz` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_ort` varchar(255) collate utf8_unicode_ci default '',
+  `empfaenger_show_normal` tinyint(4) NOT NULL default '1',
+  `empfaenger_full` text collate utf8_unicode_ci NOT NULL,
+  `ortdatum` varchar(255) collate utf8_unicode_ci default NULL,
+  `titel` varchar(255) collate utf8_unicode_ci default NULL,
+  `beschreibung` text collate utf8_unicode_ci,
+  `usepublic` tinyint(4) NOT NULL,
+  `ispublic` tinyint(4) NOT NULL default '0',
+  `uid` varchar(32) collate utf8_unicode_ci NOT NULL,
+  `showpublic` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`id`,`benutzer`),
+  KEY `uid_index` (`uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=372 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `empfaenger`
+--
+
+CREATE TABLE IF NOT EXISTS `empfaenger` (
+  `id` int(11) NOT NULL auto_increment,
+  `benutzer` int(11) NOT NULL,
+  `firmenname` varchar(45) collate utf8_unicode_ci default NULL,
+  `anrede` varchar(45) collate utf8_unicode_ci default NULL,
+  `vorname` varchar(45) collate utf8_unicode_ci default NULL,
+  `nachname` varchar(45) collate utf8_unicode_ci default NULL,
+  `strasse` varchar(45) collate utf8_unicode_ci default NULL,
+  `hausnummer` varchar(45) collate utf8_unicode_ci default NULL,
+  `plz` varchar(45) collate utf8_unicode_ci default NULL,
+  `ort` varchar(45) collate utf8_unicode_ci default NULL,
+  `show_normal` tinyint(4) NOT NULL default '1',
+  `full` text collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=150 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `outgoing_letters`
+--
+
+CREATE TABLE IF NOT EXISTS `outgoing_letters` (
+  `id` int(10) NOT NULL auto_increment,
+  `session` varchar(40) collate utf8_unicode_ci default NULL,
+  `successfull` tinyint(10) default '0',
+  `method` enum('lvin') collate utf8_unicode_ci default 'lvin',
+  `letter_hash` varchar(32) collate utf8_unicode_ci default NULL,
+  `created` timestamp NULL default CURRENT_TIMESTAMP,
+  `content` mediumblob,
+  `price` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=44 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paypal_ipn_incoming`
+--
+
+CREATE TABLE IF NOT EXISTS `paypal_ipn_incoming` (
+  `id` int(11) NOT NULL auto_increment,
+  `txn` varchar(40) collate utf8_unicode_ci NOT NULL default '',
+  `email` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `amount` int(11) NOT NULL default '0',
+  `successfull` tinyint(4) NOT NULL default '0',
+  `outgoing_letter` int(11) NOT NULL default '0',
+  `post` text collate utf8_unicode_ci,
+  `response` text collate utf8_unicode_ci,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=47 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `static`
+--
+
+CREATE TABLE IF NOT EXISTS `static` (
+  `filename` varchar(255) collate utf8_unicode_ci NOT NULL,
+  `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  `lifetime` int(11) default NULL,
+  `size` int(10) NOT NULL,
+  `data` mediumblob NOT NULL,
+  PRIMARY KEY  (`filename`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `textbausteine`
+--
+
+CREATE TABLE IF NOT EXISTS `textbausteine` (
+  `id` int(11) NOT NULL auto_increment,
+  `text` text character set latin1 NOT NULL,
+  `schlagwoerter` varchar(255) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vorlagen`
+--
+
+CREATE TABLE IF NOT EXISTS `vorlagen` (
+  `id` int(11) NOT NULL auto_increment,
+  `betreff` varchar(255) character set latin1 NOT NULL,
+  `text` text character set latin1 NOT NULL,
+  `titel` varchar(255) character set latin1 NOT NULL,
+  `kategorie` varchar(45) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+
