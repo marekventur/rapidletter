@@ -3,10 +3,10 @@
 	define("DB_CONNECTION_STRING", "host=localhost port=5432 dbname=rapidletter user=rapidletter password=rapidletter");
 	
 	/* Server */
-	define("URL", "http://www.rapidletter.de");
+	define("URL", $_ENV["ROOT_URL"]);
 	
 	/* Path */
-	define("PATH" ,"/app");
+	define("PATH" ,"/app/");
 	
 	require('letter_fields.php');
 ?>

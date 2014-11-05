@@ -88,7 +88,7 @@ function checkLetter() {
 	global $field_rules;
 	
 	foreach ($field_rules as $field => $rule) {
-		if ($rule['type'] == "ENUM")
+		if (isset($rule['type']) && $rule['type'] == "ENUM")
 			checkSessionVar($field, $rule['enum']);
 	}
 }
@@ -511,6 +511,21 @@ function letter_hash() {
 	return md5($res);
 }
 
+/* Proxy mysql functions through to psql */
+function mysql_query($query) {
+	return pg_query($query);
+}
 
+function mysql_error() {
+	return '';
+}
+
+function mysql_fetch_array($p) {
+	return pg_fetch_array($p);
+}
+
+function mysql_real_escape_string($s) {
+	return pg_escape_string ($s);
+} 
 
 ?>

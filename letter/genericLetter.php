@@ -149,9 +149,9 @@ Max Mustermann";
 				$gaLineCount = 0;
 			else
 				$gaLineCount = max(
-					count(explode("\n",$this->ga1)),
-					count(explode("\n",$this->ga2)),
-					count(explode("\n",$this->ga3))
+					count(explode("\n",$this->ga1Text)),
+					count(explode("\n",$this->ga2Text)),
+					count(explode("\n",$this->ga3Text))
 				);
 		
 			$this->SetAutoPageBreak(true , $this->marginBottom + 
@@ -224,16 +224,16 @@ Max Mustermann";
 					$this->SetFont($this->font,'',$this->bzzFontSize1);
 					
 					$this->SetXY($this->bzz1Left, $this->bzz1Top1);
-					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize) * $this->bzzLineHeight, utf8_decode($this->bzz1Name), 0);
+					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize1) * $this->bzzLineHeight, utf8_decode($this->bzz1Name), 0);
 					
 					$this->SetXY($this->bzz2Left, $this->bzz2Top1);
-					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize) * $this->bzzLineHeight, utf8_decode($this->bzz2Name), 0);
+					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize1) * $this->bzzLineHeight, utf8_decode($this->bzz2Name), 0);
 					
 					$this->SetXY($this->bzz3Left, $this->bzz3Top1);
-					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize) * $this->bzzLineHeight, utf8_decode($this->bzz3Name), 0);
+					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize1) * $this->bzzLineHeight, utf8_decode($this->bzz3Name), 0);
 					
 					$this->SetXY($this->bzz4Left, $this->bzz4Top1);
-					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize) * $this->bzzLineHeight, utf8_decode($this->bzz4Name), 0);
+					$this->MultiCell(50, $this->PointToMM($this -> bzzFontSize1) * $this->bzzLineHeight, utf8_decode($this->bzz4Name), 0);
 					
 					// Bezugszeichenzeile 2
 					$this->SetFont($this->font,'',$this->bzzFontSize2);
@@ -361,6 +361,8 @@ Max Mustermann";
 			unlink($file);
 			$im->scaleImage($width, $height, true);
 			$im->setImageFormat( "png" );
+			$im->setImageBackgroundColor('white');
+			$im = $im->flattenImages();
 			header( "Content-Type: image/png" );
 			echo $im;
 		}

@@ -64,8 +64,8 @@
 		
 		/* Wenn alles ok: anlegen */
 		if ($valid) {
-			$sql = "INSERT INTO benutzer (`password`, `email`, ga1, ga2, ga3) VALUES 
-			(MD5('".mysql_real_escape_string($_POST['register_password'])."'), 
+			$sql = "INSERT INTO benutzer (password, email, ga1, ga2, ga3, isadmin) VALUES 
+			(md5('".mysql_real_escape_string($_POST['register_password'])."'), 
 				'".mysql_real_escape_string($_POST['register_email'])."',
 'Firma Mustermann GmbH
 Musterstraße 1
@@ -78,11 +78,14 @@ E-Mail: info@musterfirma.de',
 'Bank Musterhausen
 BLZ 12345678
 Konto 98765432
-USt-IdNr.: DE123456789');";
-			echo $sql;
+USt-IdNr.: DE123456789', 1) returning id;";
+			
 			$res = mysql_query($sql) or die(mysql_error());
-		  	$_SESSION['user'] = mysql_insert_id();
-		  	header("Location: ".$_POST['ref']); 
+			if($row = mysql_fetch_array($res)){
+				$_SESSION['user'] = $row['id'];
+		  		header("Location: ".$_POST['ref']); 
+			}
+		  	
 			exit;
 		}
 	}
