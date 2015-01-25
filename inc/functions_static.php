@@ -11,7 +11,6 @@
 			$fp     = fopen($filename_full, 'r');
 			$size 	= filesize($filename_full);
 			$data 	= fread($fp, $size);
-			$data 	= addslashes($data);
 			fclose($fp);	
 		}
 		else
@@ -23,13 +22,8 @@
 		/* Create sql */
 		$sql = "INSERT INTO 
 					static (filename, lifetime, size, data) 
-				VALUES 
-					(
-						'".mysql_real_escape_string($filename)."', 
-						".(is_null($lifetime)?'NULL':$lifetime_int).",
-						".$size.",
-						'".$data."'
-					)";
+				VALUES ('".mysql_real_escape_string($filename)."', ".$lifetime_int.", ".$size.", '" .pg_escape_bytea($data) ."' )";
+		echo $sql;
 		mysql_query($sql) or die(mysql_error());
 		
 		return true;

@@ -5,3 +5,43 @@ It was basically a lightweight web version of MS Words letter templates. You pic
 Oh, and it's also in German. Sorry for that.
 
 Do whatever you want with this code, but use at your own risk. 
+
+# Setup
+
+Git clone this repo to /var/www/rapidletter
+
+## Install php, apache2 and imagemagick
+```
+sudo apt-get -yq install apache2 libapache2-mod-php5 php5-pgsql php5-imagick
+```
+
+## Setup apache
+
+* Modify ports.conf to include 36004
+* Update URL env in apache.conf
+```
+sudo sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
+sudo sed -i "s/AllowOverride.*/AllowOverride All/g" /etc/apache2/apache2.conf
+cd /etc/apache2/sites-available
+sudo ln -s /var/www/rapidletter/apache.conf rapidletter.conf
+sudo a2ensite rapidletter
+sudo a2enmod rewrite
+sudo mkdir /var/log/rapidletter
+sudo chmod a+w /var/log/rapidletter
+sudo service apache2 restart
+```
+
+## Permissions
+```
+sudo chmod a+rw /var/www/rapidletter/temp -R
+sudo chmod a+rw /var/www/rapidletter/uploads -R
+```
+
+
+## Install postgres
+* Setup user rapidletter with PW rapidletter
+* Create db radidletter owned by rapidletter
+* Run db.sql in that that db
+```
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO rapidletter;
+```

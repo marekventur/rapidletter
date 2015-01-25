@@ -513,7 +513,11 @@ function letter_hash() {
 
 /* Proxy mysql functions through to psql */
 function mysql_query($query) {
-	return pg_query($query);
+	$result = pg_query($query);
+	if (!$result) {
+		error_log(print_r(debug_backtrace(), TRUE));
+	}
+	return $result;
 }
 
 function mysql_error() {
