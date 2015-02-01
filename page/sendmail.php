@@ -2,7 +2,7 @@
 	/* Dieses Script sendet den Brief per E-Mail ab */
 	require_once("inc/mail/class.phpmailer.php");
 	require_once("inc/mail/class.smtp.php");
-	require_once("/var/www/google_credentials.php");
+	require_once("email_conf.php");
 	
 	$template = "plain";
 	

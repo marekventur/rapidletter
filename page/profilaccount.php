@@ -81,10 +81,9 @@
 				$sql = "UPDATE  
 							benutzer 
 						SET  
-							password = MD5('".mysql_real_escape_string($_POST['password'])."')
+							password = crypt('".mysql_real_escape_string($_POST['password'])."', gen_salt('bf'))
 						WHERE  
-							id = ".$user['id']."
-						LIMIT 1;";
+							id = ".$user['id'].";";
 				mysql_query($sql) or die(mysql_error());
 				$password_success = true;			
 			}	

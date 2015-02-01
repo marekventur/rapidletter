@@ -13,12 +13,12 @@
 			srand ((double)microtime()*1000000);
 			for($index = 0; $index < 5; $index++)
 				$password .= substr($pool,(rand()%(strlen ($pool))), 1);
-			$sql = "UPDATE benutzer SET password = MD5('".$password."') WHERE id=".$row['id']." LIMIT 1;";
+			$sql = "UPDATE benutzer SET password = crypt('".$password."', gen_salt('bf')) WHERE id=".$row['id'].";";
 			$res = mysql_query($sql) or die(mysql_error());	
 				
 			require_once("inc/mail/class.phpmailer.php");
 			require_once("inc/mail/class.smtp.php");
-			require_once("/var/www/google_credentials.php");
+			require_once("email_conf.php");
 			
 			
 			$mail = new PHPMailer();

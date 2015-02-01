@@ -1,3 +1,4 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS benutzer (
     id SERIAL PRIMARY KEY ,
@@ -136,3 +137,5 @@ CREATE TABLE IF NOT EXISTS vorlagen (
   titel text NOT NULL,
   kategorie text NOT NULL
 );
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO rapidletter;

@@ -11,7 +11,7 @@
 	{
 	
 	if (isset($_POST['login_submit'])) {
-		$sql = "SELECT id from benutzer where email='".mysql_real_escape_string($_POST['login_email'])."' and password=MD5('".mysql_real_escape_string($_POST['login_password'])."') LIMIT 1;";
+		$sql = "SELECT id from benutzer where email='".mysql_real_escape_string($_POST['login_email'])."' AND (password = crypt('".mysql_real_escape_string($_POST['login_password'])."', password) OR md5('".mysql_real_escape_string($_POST['login_password'])."') = password) LIMIT 1;";
 		$res = mysql_query($sql) or die(mysql_error());
 		if($row = mysql_fetch_array($res)){
 			$_SESSION['user'] = $row['id'];
@@ -65,7 +65,7 @@
 		/* Wenn alles ok: anlegen */
 		if ($valid) {
 			$sql = "INSERT INTO benutzer (password, email, ga1, ga2, ga3, isadmin) VALUES 
-			(md5('".mysql_real_escape_string($_POST['register_password'])."'), 
+			(crypt('".mysql_real_escape_string($_POST['register_password'])."', gen_salt('bf')), 
 				'".mysql_real_escape_string($_POST['register_email'])."',
 'Firma Mustermann GmbH
 Musterstraße 1

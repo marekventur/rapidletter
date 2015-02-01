@@ -12,7 +12,7 @@ Git clone this repo to /var/www/rapidletter
 
 ## Install php, apache2 and imagemagick
 ```
-sudo apt-get -yq install apache2 libapache2-mod-php5 php5-pgsql php5-imagick
+sudo apt-get -yq install apache2 libapache2-mod-php5 php5-pgsql php5-imagick postgresql-contrib
 ```
 
 ## Setup apache
