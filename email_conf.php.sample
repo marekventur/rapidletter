@@ -1,0 +1,12 @@
+<?php
+        define ("G_USERNAME","xxxx@yyy.zzz");
+        define ("G_PASSWORD","xxxx"); 
+        function load_credentials($mail) {
+                $mail->Mailer = "smtp";
+                $mail->Host = "ssl://smtp.gmail.com";
+                $mail->Port = 465;
+                $mail->SMTPAuth = true; // turn on SMTP authentication
+                $mail->Username = G_USERNAME; // SMTP username
+                $mail->Password = G_PASSWORD; // SMTP password
+        }
+?>
