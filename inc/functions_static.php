@@ -23,7 +23,7 @@
 		$sql = "INSERT INTO 
 					static (filename, lifetime, size, data) 
 				VALUES ('".mysql_real_escape_string($filename)."', ".$lifetime_int.", ".$size.", '" .pg_escape_bytea($data) ."' )";
-		echo $sql;
+
 		mysql_query($sql) or die(mysql_error());
 		
 		return true;
