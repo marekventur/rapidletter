@@ -177,7 +177,9 @@ Max Mustermann";
 						$width = $this->headerHeight;
 						
 					static_exists($this->header);
-					@$this->Image(PATH.$this->header,$this->pageWidth - $this->marginLeft - $width,$this->headerTop,$width,$this->headerHeight);
+					if (file_exists(PATH.$this->header)) {
+						@$this->Image(PATH.$this->header,$this->pageWidth - $this->marginLeft - $width,$this->headerTop,$width,$this->headerHeight);
+					}
 				}
 	
 			
