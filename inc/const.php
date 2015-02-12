@@ -6,7 +6,7 @@
 	define("URL", $_SERVER["URL"]);
 	
 	/* Path */
-	define("PATH", $_SERVER["PATH"]);
+	define("RAPIDLETTER_PATH", $_SERVER["PATH"]);
 	
 	require('letter_fields.php');
 ?>
