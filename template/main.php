@@ -36,7 +36,8 @@
 			<?php echo $content; ?>
 		</div>
 		<div id="footer">
-			Copyright 2010 by Gabriele Matthies, Rudolf Penner, Marek Ventur | <a href="<?php echo createURL("kontakt"); ?>">Kontakt</a> | <a href="http://ersties-mannheim.wi08e.de/" title="Ersties Mannheim">Ersties Mannheim</a>
+			Copyright 2010 by Gabriele Matthies, Rudolf Penner, <a href="http://marekventur.com/" title="Marek Ventur">Marek Ventur</a> | 
+			<a href="<?php echo createURL("kontakt"); ?>">Kontakt</a>
 		</div>
 	</div>
 	
