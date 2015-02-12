@@ -18,11 +18,5 @@
 	        return $output;
 	    }
 	}
-	
-	
-	/* Akzeptiert der Browser GZip? */
-	if (strstr($HTTP_SERVER_VARS['HTTP_ACCEPT_ENCODING'], 'gzip'))
-		ob_start("compress_output_option");
-	
 
 ?>

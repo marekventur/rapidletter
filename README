@@ -30,6 +30,7 @@ sudo mkdir /var/log/rapidletter
 sudo chmod a+w /var/log/rapidletter
 sudo service apache2 restart
 ```
+Make sure URL, PATH and DB_CONNECTION_STRING in the apache config are correct 
 
 ## Permissions
 ```
